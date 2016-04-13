@@ -9,11 +9,14 @@
     <p>Redirectatobs only work for people who have JavaScript! So you should probably only be giving these URLs to your hacker friends.</p>
     <form id='form'>
       <input type='text' placeholder='URL' id='url'>
-      <output></output>
+      <a href='#'></a>
     </form>
     <script>
       function update() {
-        document.querySelector('output').innerText = btoa(document.getElementById('url').value);
+        var u = 'http://redirectatob.github.io/index.html#' + btoa(document.getElementById('url').value);
+        var a = document.querySelector('a');
+        a.href = u;
+        a.innerText = u;
       }
       document.getElementById('url').addEventListener('value', function(event) {
         update();
