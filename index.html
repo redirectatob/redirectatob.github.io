@@ -6,7 +6,7 @@
   </head>
   <body>
     <script>
-      var hash = location.hash.trim();
+      var hash = location.hash.slice(1).trim();
       try {
         var decoded = atob(hash);
         document.write('Redirecting to ' + decoded + '...');
