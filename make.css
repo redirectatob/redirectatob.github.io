@@ -1,0 +1,10 @@
+body {
+  background: white;
+  display: flex;
+  /* flex flex etc */
+}
+
+#container {
+  background: #00C1D9;
+  max-width: 600px;
+}
