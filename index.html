@@ -9,9 +9,15 @@
       var hash = location.hash.slice(1).trim();
       try {
         var decoded = atob(hash);
-        document.write('Redirecting to ' + decoded + '...');
+        document.appendChild(document.createTextNode('Redirecting to '));
+        var a = document.createElement('a');
+        a.appendChild(document.createTextNode(decoded));
+        a.href = decoded;
+        document.appendChild(a);
+        document.appendChild(document.createTextNode('...'));
       } catch(err) {
         document.write('Invalid redirect D:');
+        console.log(err);
       }
     </script>
   </body>
