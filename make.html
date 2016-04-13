@@ -12,7 +12,7 @@
       <output></output>
     </form>
     <script>
-      document.getElementById('url').addEventListener('keydown', function(event) {
+      document.getElementById('url').addEventListener('value', function(event) {
         console.log(event.target.value, btoa(event.target.value));
       });
     </script>
