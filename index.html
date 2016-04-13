@@ -15,6 +15,7 @@
         a.href = decoded;
         document.body.appendChild(a);
         document.body.appendChild(document.createTextNode('...'));
+        location.replace(a);
       } catch(err) {
         document.write('Invalid redirect D:');
         console.log(err);
