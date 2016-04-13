@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>Make a redirectatob</title>
+  </head>
+  <body>
+    <h1>Make a rediractatob</h1>
+    <p>Redirectatobs only work for people who have JavaScript! So you should probably only be giving these URLs to your hacker friends.</p>
+    <form>
+      <input type='text' placeholder='URL' id='url'>
+      <output></output>
+    </form>
+    <script>
+      document.getElementById('url').addEventListener('keydown', function(event) {
+        console.log(event.target.value, btoa(event.target.value));
+      });
+    </script>
+  </body>
+</html>
