@@ -13,7 +13,7 @@
     </form>
     <script>
       function update() {
-        document.querySelector('output').innerText = btoa(event.target.value);
+        document.querySelector('output').innerText = btoa(document.getElementById('url').value);
       }
       document.getElementById('url').addEventListener('value', function(event) {
         update();
