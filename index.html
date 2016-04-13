@@ -19,7 +19,7 @@
             document.write('No redirect passed.');
             return;
           }
-          if (!(decoded.test(/:\/\//))) {
+          if (decoded.indexOf('://') === -1) {
             document.write('No protocol specified.');
             return;
           }
