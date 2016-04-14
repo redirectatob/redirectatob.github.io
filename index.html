@@ -36,7 +36,7 @@
           document.body.appendChild(document.createTextNode('Redirecting to '));
           makea(decoded);
           document.body.appendChild(document.createTextNode('...'));
-          location.replace(a);
+          location.replace(decoded);
         } catch(err) {
           document.write('Invalid redirect D:');
           console.log(err);
