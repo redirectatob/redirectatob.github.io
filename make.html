@@ -22,6 +22,7 @@
         var u = 'http://redirectatob.github.io/index.html#' + btoa(document.getElementById('url').value);
         var a = document.querySelector('a');
         a.href = u;
+        a.style.wordWrap = "break-word";
         a.innerText = u;
       }
       document.getElementById('url').addEventListener('value', function(event) {
