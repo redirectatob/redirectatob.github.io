@@ -31,3 +31,10 @@ body {
 h1 {
   margin-top: 0;
 }
+
+#url {
+  padding: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
