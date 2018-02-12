@@ -6,7 +6,7 @@ body, html {
 }
 
 body {
-  background: white;
+  background: #00C1D9;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -16,13 +16,13 @@ body {
 }
 
 #container {
-  background: #00C1D9;
+  background: white;
   max-width: 600px;
   padding: 40px;
   font-family: "Helvetica";
   line-height: 1.8em;
   box-sizing: border-box;
-  box-shadow: 0 3px 0 #008999;
+  box-shadow: 0 3px 0 #888888;
   border-radius: 4px;
   margin-top: 25px;
   margin-bottom: 25px;
