@@ -27,11 +27,12 @@
             location.replace('http://redirectatob.github.io/make.html');
             return;
           }
-          const protocol = decoded.match(/^[a-zA-Z]+?:\/\//);
+          var protocol = decoded.match(/^([a-zA-Z]+)?:\/\//);
           if (!protocol) {
             document.write('No protocol specified.');
             return;
           }
+          protocol = protocol[1];
           if (!['data', 'http', 'https'].includes(protocol.toLowerCase())) {
             document.write('Invalid protocol specified.');
             return;
