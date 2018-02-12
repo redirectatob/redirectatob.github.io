@@ -9,16 +9,14 @@
       Sorry, the redirect doesn't work without having JavaScript enabled! D:<br>
       Please enable JavaScript for this website.
     </noscript>
-    
     <script>
-    
       function makea(u) {
         var a = document.createElement('a');
         a.appendChild(document.createTextNode(u));
         a.href = u;
         document.body.appendChild(a);
       }
-    
+
       (function() {
         var hash = location.hash.slice(1).trim();
         try {
@@ -29,8 +27,13 @@
             location.replace('http://redirectatob.github.io/make.html');
             return;
           }
-          if (decoded.indexOf('://') === -1) {
+          const protocol = decoded.match(/^[a-zA-Z]+?:\/\//);
+          if (!protocol) {
             document.write('No protocol specified.');
+            return;
+          }
+          if (!['data', 'http', 'https'].includes(protocol.toLowerCase())) {
+            document.write('Invalid protocol specified.');
             return;
           }
           document.body.appendChild(document.createTextNode('Redirecting to '));
