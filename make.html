@@ -19,7 +19,13 @@
     </div>
     <script>
       function update() {
-        var u = 'https://redirectatob.github.io/index.html#' + btoa(document.getElementById('url').value);
+        var u = 'https://redirectatob.github.io/index.html#';
+        var r = document.getElementById('url').value;
+        try {
+          u += btoa(r);
+        } catch (e) {
+          u += btoa("!" + encodeURIComponent(r));
+        }
         var a = document.querySelector('a');
         a.href = u;
         a.style.wordWrap = "break-word";
