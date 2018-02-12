@@ -21,7 +21,7 @@
         var hash = location.hash.slice(1).trim();
         try {
           var decoded = atob(hash);
-          if(decoded.startsWith("!"))
+          if (decoded.startsWith("!"))
             decoded = decodeURIComponent(decoded.substr(1));
           if (decoded.length < 1) {
             document.write('No redirect passed - sending you to the make page: ');
