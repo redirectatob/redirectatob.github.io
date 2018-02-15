@@ -50,5 +50,6 @@ An encoded hash can be converted into a destination URL. Redirectatob will do th
    - http
    - https
    - data
+   
    And if it isn't, then these steps MUST be stopped and the URL MUST be rejected as invalid. This is important from a security standpoint.
 4) Redirect the user to the URL of the resulting string. It is not necessery to ensure the URL leads to a host which resolves; nor that the destination page responds with a status code in the range 200-299; however, you MAY check that the URL is well-formed.
