@@ -30,13 +30,11 @@ You should not attempt to encode any other schema, as that will make the redirec
 
 #### In the Latin1 range
 
-If a destination URL contains NO characters OUTSIDE the Latin1 character range, then it should be encoded through the following steps
-
-1) Base64 encode the URL, in a way that replicates JavaScript's `btoa()` function.
+If a destination URL contains NO characters OUTSIDE the Latin1 character range, then it should be encoded through base64, in a way that replicates JavaScript's `btoa()` function.
 
 #### Outside the Latin1 range
 
-If a destination URL contains ONE OR MORE characters OUTSIDE the Latin1 range, then it should be encoded through the following steps...
+If a destination URL contains ONE OR MORE characters OUTSIDE the Latin1 range, then it should be encoded through the following steps:
 
 1) Place a `!` character BEFORE the URL (to the left of the schema part).
 2) Percent encode all characters in the URL, AS IF IT IS PART OF A QUERYSTRING (i.e. encode the host part too, if applicable). The percent encoding should be done in a way that replicates JavaScript's `encodeURIComponent()` function.
