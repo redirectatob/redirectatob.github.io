@@ -38,3 +38,7 @@ h1 {
   box-sizing: border-box;
   display: block;
 }
+
+#error {
+  color: red; 
+}
