@@ -19,7 +19,7 @@ body {
   background: white;
   max-width: 600px;
   padding: 40px;
-  font-family: "Helvetica";
+  font-family: "Helvetica", sans-serif;
   line-height: 1.8em;
   box-sizing: border-box;
   box-shadow: 0 3px 0 #888888;
