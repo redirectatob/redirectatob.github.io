@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
-    <meta charset='utf-8' />
+    <meta charset="utf-8" />
     <title>Make a redirectatob</title>
-    <link rel='stylesheet' href='make.css' />
+    <link rel="stylesheet" href="make.css" />
   </head>
   <body>
-    <div id='container'>
+    <div id="container">
       <h1>Make a redirectatob</h1>
       <p>Redirectatobs only work for people who have JavaScript! So you should probably only be giving these URLs to your hacker friends.</p>
-      <form id='form'>
-        <input type='url' placeholder='URL' id='url'>
-        <a href='#'></a>
+      <form id="form">
+        <input type="url" placeholder="URL" id="url">
+        <a href="#"></a>
       </form>
       <h2>What is redirectatob?</h2>
-      <p>Maybe it'll help if you think of them instead of redirect<code>atob</code>s. Basically redirectatob is a webpage that you pass a URL to in the location hash (i.e. domain/page.html<b>#hash</b>, but encoded with <code>btoa</code>. The webpage will convert the encoded hash back into a URL using <code>atob</code> through the client's JavaScript. I made it so that I could give this URL - <a href='http://www.woodus.com/den/games/dq4ds/mugshots.php'>http://www.woodus.com/den/games/dq4ds/mugshots.php</a> - to a friend of mine. The site's blacklist was preventing me from posting the link, and, as it had happened to me multiple times before, I decided I needed to make a redirect service.</p>
+      <p>Maybe it'll help if you think of them instead of redirect<code>atob</code>s. Basically, redirectatob is a webpage that you pass a URL to in the location hash (i.e. domain/page.html<b>#hash</b>, but encoded with <code>btoa</code>. The webpage will convert the encoded hash back into a URL using <code>atob</code> through the client's JavaScript. I made it so that I could give this URL - <a href="http://www.woodus.com/den/games/dq4ds/mugshots.php">http://www.woodus.com/den/games/dq4ds/mugshots.php</a> - to a friend of mine. The site's blacklist was preventing me from posting the link, and, as it had happened to me multiple times before, I decided I needed to make a redirect service.</p>
       <p>I don't own a server, though, so just using the client's <code>btoa</code>/<code>atob</code> worked.</p>
     </div>
     <script>
@@ -28,10 +28,10 @@
         }
         var a = document.querySelector('a');
         a.href = u;
-        a.style.wordWrap = "break-word";
+        a.style.wordWrap = 'break-word';
         a.innerText = u;
       }
-      document.getElementById('url').addEventListener('value', function(event) {
+      document.getElementById('url').addEventListener('value', function() {
         update();
       });
       document.getElementById('form').addEventListener('submit', function(event) {
