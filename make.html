@@ -26,7 +26,7 @@
         // All modern browsers support the pattern attribute, but just in case:
         if (r && !/^((http|https):\/\/|data:)/i.test(r)) {
           document.getElementById('error').innerText = 'You can only use http://, https://, and data:'
-          document.getElementById('url').innerText = ''
+          document.querySelector('a').innerText = ''
 
           return 
 	} else {
