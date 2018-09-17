@@ -30,7 +30,7 @@
             return;
           }
           var protocol = decoded.match();
-          if (!/^((http|https):\/\/|data:)/.test(decoded)) {
+          if (!/^(https?:\/\/|data:)/i.test(decoded)) {
             document.write('Invalid protocol specified.');
             return;
           }
