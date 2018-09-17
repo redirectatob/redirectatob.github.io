@@ -12,7 +12,7 @@
       <form id="form">
         <input type="url" title="You can only use http://, https://, and data:" placeholder="URL" id="url" pattern="^([hH][tT][tT][pP][sS]?://|[dD][aA][tT][aA]:).*">
         <div id="error"></div>
-        <a href="#"></a>
+        <a id="output" href="#"></a>
       </form>
       <h2>What is redirectatob?</h2>
       <p>Maybe it'll help if you think of them instead of redirect<code>atob</code>s. Basically, redirectatob is a webpage that you pass a URL to in the location hash (i.e. domain/page.html<b>#hash</b>, but encoded with <code>btoa</code>. The webpage will convert the encoded hash back into a URL using <code>atob</code> through the client's JavaScript. I made it so that I could give this URL - <a href="http://www.woodus.com/den/games/dq4ds/mugshots.php">http://www.woodus.com/den/games/dq4ds/mugshots.php</a> - to a friend of mine. The site's blacklist was preventing me from posting the link, and, as it had happened to me multiple times before, I decided I needed to make a redirect service.</p>
@@ -20,25 +20,24 @@
     </div>
     <script>
       function update() {
+        var a = document.getElementById('output');
         var u = 'https://redirectatob.github.io/index.html#';
         var r = document.getElementById('url').value;
 
+
         // All modern browsers support the pattern attribute, but just in case:
         if (r && !/^(https?:\/\/|data:)/i.test(r)) {
-          document.getElementById('error').innerText = 'You can only use http://, https://, and data:'
-          document.querySelector('a').innerText = ''
-
-          return 
-        } else {
-          document.getElementById('error').innerText = ''
+          document.getElementById('error').innerText = 'You can only use http://, https://, and data:';
+          document.querySelector('a').innerText = '';
+          return;
         }
+        document.getElementById('error').innerText = '';
 
         try {
           u += btoa(r);
         } catch (e) {
           u += btoa("!" + encodeURIComponent(r));
         }
-        var a = document.querySelector('a');
         a.href = u;
         a.style.wordWrap = 'break-word';
         a.innerText = u;
