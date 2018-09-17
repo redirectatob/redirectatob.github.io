@@ -30,22 +30,22 @@ You should not attempt to encode any other schema, as that will make the redirec
 
 #### In the Latin1 range
 
-If a destination URL contains NO characters OUTSIDE the Latin1 character range, then it should be encoded through base64, in a way that replicates JavaScript's `btoa()` function.
+If a destination URL contains NO characters OUTSIDE the Latin1 character range, then it should be encoded through base64, in a way that replicates JavaScript's [`btoa()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa) function.
 
 #### Outside the Latin1 range
 
 If a destination URL contains ONE OR MORE characters OUTSIDE the Latin1 range, then it should be encoded through the following steps:
 
 1) Place a `!` character BEFORE the URL (to the left of the schema part).
-2) Percent encode all characters in the URL, AS IF IT IS PART OF A QUERYSTRING (i.e. encode the host part too, if applicable). The percent encoding should be done in a way that replicates JavaScript's `encodeURIComponent()` function.
-3) Base64 encode the resulting string, in a way that replicates JavaScript's `btoa()` function.
+2) Percent encode all characters in the URL, AS IF IT IS PART OF A QUERYSTRING (i.e. encode the host part too, if applicable). The percent encoding should be done in a way that replicates JavaScript's [`encodeURIComponent()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) function.
+3) Base64 encode the resulting string, in a way that replicates JavaScript's [`btoa()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa) function.
 
 ## Decoding hashes into destination URLs
 
 An encoded hash can be converted into a destination URL. Redirectatob will do this, and then redirect a user to their final destination if a valid redirectatob was provided.
 
-1) Base-64 decode the hash (without the `#`), in a way that replicates JavaScript's `atob()` function.
-2) If the decoded value begins with an `!` character, that character should be stripped and the rest of the string should be percent decoded, AS IF IT WERE PART OF A QUERYSTRING (i.e. decode the host part too, if applicable). The percent decoding should be done in a way that replicates JavaScript's `decodeURIComponent()` function.
+1) Base-64 decode the hash (without the `#`), in a way that replicates JavaScript's [`atob()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/atob) function.
+2) If the decoded value begins with an `!` character, that character should be stripped and the rest of the string should be percent decoded, AS IF IT WERE PART OF A QUERYSTRING (i.e. decode the host part too, if applicable). The percent decoding should be done in a way that replicates JavaScript's [`decodeURIComponent()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) function.
 3) Check if the schema of the URL is one of
    - http
    - https
