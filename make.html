@@ -10,7 +10,7 @@
       <h1>Make a redirectatob</h1>
       <p>Redirectatobs only work for people who have JavaScript! So you should probably only be giving these URLs to your hacker friends.</p>
       <form id="form">
-        <input type="url" title="You can only use http://, https://, and data:" placeholder="URL" id="url" pattern="^((http|https)://|data:).*">
+        <input type="url" title="You can only use http://, https://, and data:" placeholder="URL" id="url" pattern="^([hH][tT][tT][pP][sS]?://|[dD][aA][tT][aA]:).*">
 	<div id="error"></div>
 	<a href="#"></a>
       </form>
@@ -24,7 +24,7 @@
         var r = document.getElementById('url').value;
 
         // All modern browsers support the pattern attribute, but just in case:
-        if (r && !/^((http|https):\/\/|data:)/.test(r)) {
+        if (r && !/^((http|https):\/\/|data:)/i.test(r)) {
           document.getElementById('error').innerText = 'You can only use http://, https://, and data:'
           document.getElementById('url').innerText = ''
 
